@@ -37,6 +37,7 @@ stages:
                 - task: AzureWebApp@1
                   inputs:
                     azureSubscription: '9d33f830-0de4-466e-9373-1d9945951cb6'
+                    resourceGroupName: test-rg
                     appName: 'devops-test-appmy'
                     package: '$(Pipeline.Workspace)/drop/*.zip'
                     startUpCommand: 'npm start'
