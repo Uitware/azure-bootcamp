@@ -20,7 +20,7 @@ stages:
             displayName: 'Build React App'
           - task: PublishBuildArtifacts@1
             inputs:
-              PathtoPublish: '$(Build.SourcesDirectory)/build'
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
               ArtifactName: 'drop'
             displayName: 'Publish Build Artifacts'
 
