@@ -21,10 +21,10 @@ stages:
           - task: ArchiveFiles@2
             displayName: "archive"
             inputs:
-              rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/dist/'
+              rootFolderOrFile: $(System.DefaultWorkingDirectory)/dist'
               includeRootFolder: true
               archiveType: zip
-              archiveFile: $(Build.ArtifactStagingDirectory)/archive.zip
+              archiveFile: $(System.DefaultWorkingDirectory)/archive.zip
               replaceExistingArchive: true
               verbose: true
 
@@ -33,7 +33,7 @@ stages:
               azureSubscription: '9d33f830-0de4-466e-9373-1d9945951cb6'
               resourceGroupName: test-rg
               appName: 'devops-test-appmy'
-              package: $(Build.ArtifactStagingDirectory)/archive.zip
+              package: $(System.DefaultWorkingDirectory)/archive.zip
               startUpCommand: 'npm start'
               appType: 'webApp'
               deploymentMethod: 'auto'
