@@ -1,0 +1,45 @@
+trigger:
+  branches:
+    include:
+      - master
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildReactApp
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '14.x'
+            displayName: 'Install Node.js'
+          - script: |
+              npm install
+              npm run build
+            displayName: 'Build React App'
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: '$(Build.SourcesDirectory)/build'
+              ArtifactName: 'drop'
+            displayName: 'Publish Build Artifacts'
+
+  - stage: Deploy
+    jobs:
+      - deployment: DeployToAzureWebApp
+        pool:
+          vmImage: 'ubuntu-latest'
+        environment: 'TEST'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: AzureWebApp@1
+                  inputs:
+                    azureSubscription: '9d33f830-0de4-466e-9373-1d9945951cb6'
+                    appName: 'devops-test-appmy'
+                    package: '$(Pipeline.Workspace)/drop/*.zip'
+                    startUpCommand: 'npm start'
+                    appType: 'webApp'
+                    deploymentMethod: 'auto'
+                  displayName: 'Deploy to Azure Web App'
