@@ -22,7 +22,7 @@ stages:
             displayName: "archive"
             inputs:
               rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/dist/'
-              includeRootFolder: false
+              includeRootFolder: true
               archiveType: zip
               archiveFile: $(Build.ArtifactStagingDirectory)/archive.zip
               replaceExistingArchive: true
