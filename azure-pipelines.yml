@@ -43,7 +43,7 @@ stages:
                     azureSubscription: '9d33f830-0de4-466e-9373-1d9945951cb6'
                     resourceGroupName: test-rg
                     appName: 'devops-test-appmy'
-                    package: '$(Pipeline.Workspace)/drop/*'
+                    package: '$(Pipeline.Workspace)/drop/dist/*'
                     startUpCommand: 'npm start'
                     appType: 'webApp'
                     deploymentMethod: 'auto'
