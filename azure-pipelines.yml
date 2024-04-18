@@ -28,23 +28,13 @@ stages:
               ArtifactName: 'drop'
             displayName: 'Publish Build Artifacts'
 
-  - stage: Deploy
-    jobs:
-      - deployment: DeployToAzureWebApp
-        pool:
-          vmImage: 'ubuntu-latest'
-        environment: 'TEST'
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - task: AzureWebApp@1
-                  inputs:
-                    azureSubscription: '9d33f830-0de4-466e-9373-1d9945951cb6'
-                    resourceGroupName: test-rg
-                    appName: 'devops-test-appmy'
-                    package: '$(Pipeline.Workspace)/drop/dist/*'
-                    startUpCommand: 'npm start'
-                    appType: 'webApp'
-                    deploymentMethod: 'auto'
-                  displayName: 'Deploy to Azure Web App'
+          - task: AzureWebApp@1
+            inputs:
+              azureSubscription: '9d33f830-0de4-466e-9373-1d9945951cb6'
+              resourceGroupName: test-rg
+              appName: 'devops-test-appmy'
+              package: '$(Pipeline.Workspace)/dist/**'
+              startUpCommand: 'npm start'
+              appType: 'webApp'
+              deploymentMethod: 'auto'
+            displayName: 'Deploy to Azure Web App'
