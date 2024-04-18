@@ -38,18 +38,12 @@ stages:
           runOnce:
             deploy:
               steps:
-                - task: DownloadBuildArtifacts@0
-                  inputs:
-                    buildType: 'current'
-                    downloadType: 'single'
-                    artifactName: 'drop'
-                    downloadPath: '$(System.ArtifactsDirectory)'
                 - task: AzureWebApp@1
                   inputs:
                     azureSubscription: '9d33f830-0de4-466e-9373-1d9945951cb6'
                     resourceGroupName: test-rg
                     appName: 'devops-test-appmy'
-                    package: '$(Pipeline.Workspace)/drop/*.zip'
+                    package: '$(Pipeline.Workspace)/drop/*'
                     startUpCommand: 'npm start'
                     appType: 'webApp'
                     deploymentMethod: 'auto'
