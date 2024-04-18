@@ -18,22 +18,22 @@ stages:
               npm install
               npm run build
             displayName: 'Build React App'
-          - task: CopyFiles@2
+          - task: ArchiveFiles@2
+            displayName: "archive"
             inputs:
-               contents: 'dist/**'
-               targetFolder: $(Build.ArtifactStagingDirectory)
-          - task: PublishBuildArtifacts@1
-            inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-              ArtifactName: 'drop'
-            displayName: 'Publish Build Artifacts'
+              rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/dist/'
+              includeRootFolder: false
+              archiveType: zip
+              archiveFile: $(Build.ArtifactStagingDirectory)/archive.zip
+              replaceExistingArchive: true
+              verbose: true
 
           - task: AzureWebApp@1
             inputs:
               azureSubscription: '9d33f830-0de4-466e-9373-1d9945951cb6'
               resourceGroupName: test-rg
               appName: 'devops-test-appmy'
-              package: '$(Build.ArtifactStagingDirectory)/dist/**'
+              package: $(Build.ArtifactStagingDirectory)/archive.zip
               startUpCommand: 'npm start'
               appType: 'webApp'
               deploymentMethod: 'auto'
