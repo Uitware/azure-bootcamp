@@ -18,9 +18,13 @@ stages:
               npm install
               npm run build
             displayName: 'Build React App'
+          - task: CopyFiles@2
+            inputs:
+               contents: 'dist/**'
+               targetFolder: $(Build.ArtifactStagingDirectory)
           - task: PublishBuildArtifacts@1
             inputs:
-              PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
               ArtifactName: 'drop'
             displayName: 'Publish Build Artifacts'
 
