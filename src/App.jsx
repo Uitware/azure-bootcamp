@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import cloudImage from './assets/main_p.png';
 import './App.css';
 import nu1 from './assets/nu1.png';
@@ -6,14 +6,65 @@ import nu2 from './assets/nu2.jpg';
 import nu3 from './assets/nu3.jpg';
 import nu4 from './assets/nu4.jpg';
 import nu5 from './assets/nu5.jpeg';
-import nu6 from './assets/nu6.png';
-import nu7 from './assets/nu7.png';
-import nu8 from './assets/nu8.jpg';
 import nu9 from './assets/nu9.jpg';
 import brand from './assets/brand.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useTranslation } from 'react-i18next';
 import './i18n';
+
+const getTimeRemaining = (targetDate) => {
+  const now = new Date().getTime();
+  const timeDiff = targetDate.getTime() - now;
+
+  if (timeDiff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
+  const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+  const seconds = Math.floor((timeDiff / 1000) % 60);
+
+  return { days, hours, minutes, seconds };
+};
+
+// eslint-disable-next-line react/prop-types
+const CountdownTimer = ({ targetDate }) => {
+  const [timeLeft, setTimeLeft] = useState(getTimeRemaining(targetDate));
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(getTimeRemaining(targetDate));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [targetDate]);
+
+  const { days, hours, minutes, seconds } = timeLeft;
+
+  return (
+    <>
+      {days > 2 ? (
+        <>
+          <span>{t("time.days", { count: days })}</span>{" "}
+          <span>{t("time.hours", { count: hours })}</span>
+        </>
+      ) : hours > 1 ? (
+        <>
+          <span>{t("time.hours", { count: hours })}</span>{" "}
+          <span>{t("time.minutes", { count: minutes })}</span>
+        </>
+      ) : minutes > 1 ? (
+        <>
+          <span>{t("time.minutes", { count: minutes })}</span>{" "}
+          <span>{t("time.seconds", { count: seconds })}</span>
+        </>
+      ) : seconds > 0 ? (
+        <span>{t("time.seconds", { count: seconds })}</span>
+      ) : (
+        <span>{t("EventStarted")}</span>
+      )}
+    </>
+  );
+};
 
 function App() {
   const [language, setLanguage] = useState('en');
@@ -21,6 +72,7 @@ function App() {
   const [registerLink, setRegisterLink] = useState('');
   const [imageUrl, setImageUrl] = useState('https://itcluster.lviv.ua/wp-content/uploads/2023/03/lnu.svg');
   const [imClassName, setImClassName] = useState('img-i4');
+  const targetDate = new Date("2025-03-10T00:00:00");
 
   useEffect(() => {
     const hostname = window.location.hostname;
@@ -56,29 +108,6 @@ function App() {
     setLanguage(lang);
     i18n.changeLanguage(lang);
   };
-
-  useEffect(() => {
-    const countDownDate = new Date("Mar 4, 2024 00:00:00").getTime();
-    const countdownFunction = setInterval(() => {
-      const now = new Date().getTime();
-      const timeRemaining = countDownDate - now;
-      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
-      const daysElement = document.getElementById("days");
-      const hoursElement = document.getElementById("hours");
-      if (daysElement) daysElement.innerHTML = days < 10 ? '0' + days : days;
-      if (hoursElement) hoursElement.innerHTML = hours < 10 ? '0' + hours : hours;
-
-      if (timeRemaining < 0) {
-        clearInterval(countdownFunction);
-        const timerElement = document.getElementById("countdown-timer");
-        if (timerElement) timerElement.innerHTML = "The event has started";
-      }
-    }, 1000);
-
-    return () => clearInterval(countdownFunction);
-  }, []);
 
   const scrollContainer = (direction) => {
     const container = document.querySelector('.speakers-container');
@@ -128,7 +157,7 @@ function App() {
             <p>{t("PartnershipDetails")}</p>
             <p>{t("ParticipationOpportunity")}</p>
             <p>{t("UniversityDetermination")}</p>
-            <a id="registerBtn" href={registerLink} className="btn-register" target="_blank">{t("RegisterButton")}</a>
+            <a id="registerBtn" href={registerLink} className="btn-register" target="_blank" rel="noreferrer">{t("RegisterButton")}</a>
           </div>
           <div className="image-content">
             <img src={cloudImage} alt="Main Logo" />
@@ -138,16 +167,21 @@ function App() {
         <div className="event-info">
           <div className="countdown">
             <p className="countdown-label">{t("TimeLeftLabel")}</p>
-            <div id="countdown-timer" class="countdown-timer">
-              <span className="days" id="days">00</span> {t("Days")}
-              <span className="space"></span>
-              <span id="hours">00</span> {t("Hours")}
+            <div className="countdown-timer">
+              <CountdownTimer targetDate={targetDate} />
             </div>
           </div>
         </div>
         <div className="agenda-container">
-          <h2 className="agenda-title">{t("AgendaTitle")}</h2>
-          <div className="agenda">
+          <div className="discriptionProgram">
+            <h2 className="agenda-title">{t("AgendaTitle")}</h2>
+            <p className="mainText"><b>{t("NameProgram")}</b> {t("AzureBootcamp")}</p>
+            <p className="mainText"><b>{t("GoalsProgramTitle")}</b> {t("GoalsProgram")}</p>
+            <p className="mainText"><b>{t('DetailsProgram')}</b></p>
+            <p className="mainText"> <b>{t("Speakers")}</b> {t("Speakers1")}</p>
+            <h3 className="h3">{t("BoxProgram")}</h3>
+
+            <div className="agenda">
             {/* Agenda Headers */}
             <div className="agenda-header">
               <div className="agenda-column-header">{t("Date")}</div>
@@ -155,7 +189,7 @@ function App() {
             </div>
             {/* Introduction to Azure Cloud */}
             <div className="agenda-item">
-              <div className="agenda-date">04-08 {t("March")}</div>
+              <div className="agenda-date">10 - 16 {t("March")}</div>
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("IntroductionToAzureCloud")}</h3>
                 <div className="speaker-container">
@@ -168,72 +202,59 @@ function App() {
             <hr className="agenda-divider" />
             {/* Azure Management */}
             <div className="agenda-item">
-              <div className="agenda-date">11-15 {t("March")}</div>
-              <div className="agenda-details">
-                <h3 className="agenda-event-title">{t("AzureManagement")}</h3>
-                <div className="speaker-container">
-                  <img src={nu7} alt="Christoffer Noring" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Christoffer Noring</h3>
-                </div>
-                <p className="agenda-description">{t("AzureManagementDescription")}</p>
-              </div>
-            </div>
-            <hr className="agenda-divider" />
-            {/* Azure Cloud Application Development */}
-            <div className="agenda-item">
-              <div className="agenda-date">18-22 {t("March")}</div>
+              <div className="agenda-date">17 - 23 {t("March")}</div>
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureCloudApplicationDevelopment")}</h3>
                 <div className="speaker-container">
-                  <img src={nu4} alt="Anton Boyko" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Anton Boyko</h3>
+                  <img src={nu1} alt="Andriy Bilous" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Andriy Bilous</h3>
                 </div>
                 <p className="agenda-description">{t("AzureCloudApplicationDevelopmentDescription")}</p>
               </div>
             </div>
             <hr className="agenda-divider" />
-            {/* Azure Architecture Components and Services */}
+            {/* Azure Cloud Application Development */}
             <div className="agenda-item">
-              <div className="agenda-date">25-29 {t("March")}</div>
+              <div className="agenda-date">24 - 30 {t("March")}</div>
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureArchitectureComponentsAndServices")}</h3>
                 <div className="speaker-container">
-                  <img src={nu3} alt="Andriy Bilous" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Stanislav Lebedenko</h3>
+                  <img src={nu4} alt="Anton Boyko" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Anton Boyko</h3>
                 </div>
                 <p className="agenda-description">{t("AzureArchitectureComponentsAndServicesDescription")}</p>
               </div>
             </div>
             <hr className="agenda-divider" />
-            {/* Architectural Solutions in Azure */}
+            {/* Azure Architecture Components and Services */}
             <div className="agenda-item">
-              <div className="agenda-date">01-05 {t("April")}</div>
+              <div className="agenda-date">31 {t("March")} - 6 {t("April")}</div>
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("ArchitectingSolutionsOnAzure")}</h3>
                 <div className="speaker-container">
-                  <img src={nu2} alt="Andriy Bilous" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Orest Lavriv</h3>
+                  <img src={nu3} alt="Andriy Bilous" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Stanislav Lebedenko</h3>
                 </div>
                 <p className="agenda-description">{t("ArchitectingSolutionsOnAzureDescription")}</p>
               </div>
             </div>
             <hr className="agenda-divider" />
-            {/* Azure Automation */}
+            {/* Architectural Solutions in Azure */}
             <div className="agenda-item">
-              <div className="agenda-date">08-12 {t("April")}</div>
+              <div className="agenda-date">07 - 13 {t("April")}</div>
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureAutomation")}</h3>
                 <div className="speaker-container">
-                  <img src={nu6} alt="Leonid Chetverikov" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Leonid Chetverikov</h3>
+                  <img src={nu2} alt="Andriy Bilous" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Orest Lavriv</h3>
                 </div>
                 <p className="agenda-description">{t("AzureAutomationDescription")}</p>
               </div>
             </div>
             <hr className="agenda-divider" />
-            {/* Azure DevOps Services */}
+            {/* Azure Automation */}
             <div className="agenda-item">
-              <div className="agenda-date">15-19 {t("April")}</div>
+              <div className="agenda-date">14 - 20 {t("April")}</div>
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureDevOpsServices")}</h3>
                 <div className="speaker-container">
@@ -244,27 +265,40 @@ function App() {
               </div>
             </div>
             <hr className="agenda-divider" />
-            {/* Azure Security and Privacy */}
+            {/* Azure DevOps Services */}
             <div className="agenda-item">
-              <div className="agenda-date">22-26 {t("April")}</div>
+              <div className="agenda-date">21 - 27 {t("April")}</div>
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureSecurityAndPrivacy")}</h3>
                 <div className="speaker-container">
-                  <img src={nu9} alt="Sarah Young" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Sarah Young</h3>
+                  <img src={nu1} alt="Andriy Bilous" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Andriy Bilous</h3>
                 </div>
                 <p className="agenda-description">{t("AzureSecurityAndPrivacyDescription")}</p>
               </div>
             </div>
             <hr className="agenda-divider" />
+            {/* Azure Security and Privacy */}
+            <div className="agenda-item">
+              <div className="agenda-date">28 {t("April")} - 4 {t("May")}</div>
+              <div className="agenda-details">
+                <h3 className="agenda-event-title">{t("AzureDataServices")}</h3>
+                <div className="speaker-container">
+                  <img src={nu9} alt="Sarah Young" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Sarah Young</h3>
+                </div>
+                <p className="agenda-description">{t("AzureDataServicesDescription")}</p>
+              </div>
+            </div>
+            <hr className="agenda-divider" />
             {/* Azure AI Concepts */}
             <div className="agenda-item">
-              <div className="agenda-date">29 {t("April")} - 03 {t("May")}</div>
+              <div className="agenda-date">05 - 11 {t("May")}</div>
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureAIConcepts")}</h3>
                 <div className="speaker-container">
-                  <img src={nu8} alt="Pablo Nunes Lopes" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Pablo Nunes Lopes</h3>
+                  <img src={nu1} alt="Andriy Bilous" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Andriy Bilous</h3>
                 </div>
                 <p className="agenda-description">{t("AzureAIConceptsDescription")}</p>
               </div>
@@ -272,16 +306,51 @@ function App() {
             <hr className="agenda-divider" />
             {/* Fundamentals of Working with Data in Azure */}
             <div className="agenda-item">
-              <div className="agenda-date">06-10 {t("May")}</div>
+              <div className="agenda-date">12 - 18 {t("May")}</div>
               <div className="agenda-details">
-                <h3 className="agenda-event-title">{t("AzureDataServices")}</h3>
+                <h3 className="agenda-event-title">{t("DevelopmentOfSoftwareSolutions")}</h3>
                 <div className="speaker-container">
                   <img src={nu5} alt="Taras Kloba" className="speaker-photo" />
                   <h3 className="agenda-event-title">Taras Kloba</h3>
                 </div>
-                <p className="agenda-description">{t("AzureDataServicesDescription")}</p>
+                <p className="agenda-description">{t("DevelopmentOfSoftwareSolutionsDescription")}</p>
               </div>
             </div>
+          </div>
+
+            <p className="mainText"><b>{t('NumberOfAcademicHours')}</b> {t('NumberOfAcademicHoursTotal')}</p>
+            <p className="mainText"><b>{t('CertificateProgramObjectives')}</b> {t('CertificateProgramObjectivesDescription')}</p>
+            <p className="mainText"><b>{t('SkillsCompetenciesAcquired')}</b> </p>
+          <ul>
+            <li>{t('SkillsCompetenciesAcquired1')}</li>
+            <li>{t('SkillsCompetenciesAcquired2')}</li>
+            <li>{t('SkillsCompetenciesAcquired3')}</li>
+            <li>{t('SkillsCompetenciesAcquired4')}</li>
+            <li>{t('SkillsCompetenciesAcquired5')}</li>
+            <li>{t('SkillsCompetenciesAcquired6')}</li>
+            <li>{t('SkillsCompetenciesAcquired7')}</li>
+            <li>{t('SkillsCompetenciesAcquired8')}</li>
+          </ul>
+          <p className="mainText"><b>{t("ProgramDuration")}</b> {t("ProgramDuration1")}</p>
+          <p className="mainText"><b>{t("OrganizingDepartment")}</b> {t("OrganizingDepartment1")}</p>
+          <p className="mainText"><b>{t("InformationAboutOrganizers")}</b> {t("InformationAboutOrganizersDetails")}</p>
+          <p className="mainText"><b>{t("InformationAboutEducationalProgram")}</b></p>
+          <ul>
+            <li>{t('InformationAboutEducationalProgram1')}</li>
+            <li>{t('InformationAboutEducationalProgram2')}</li>
+            <li>{t('InformationAboutEducationalProgram3')}</li>
+          </ul>
+          <p className="mainText"><b>{t("LanguageInstruction")}</b> {t("LanguageInstructionChange")}</p>
+          <p className="mainText"><b>{t("ClassFormat")}</b> {t("ClassFormat1")}</p>
+          <p className="mainText"><b>{t("AssessmentPolicies")}</b> {t("AssessmentPoliciesDetails")}</p>
+
+
+          
+
+          
+
+
+
           </div>
         </div>
 
@@ -351,42 +420,6 @@ function App() {
                 </div>
               </div>
               {/* Speaker 6 */}
-              <div className="speaker-card">
-                <div className="speaker-image">
-                  <img src={nu6} alt="Leonid Chetverikov" />
-                </div>
-                <div className="speaker-info">
-                  <h5 className="speaker-name">Leonid Chetverikov</h5>
-                  <p className="speaker-title">DevOps Tech Lead</p>
-                  <p className="speaker-title">at EPAM</p>
-                  <a href="https://www.linkedin.com/in/leonid-chetverikov-82b91a21/" className="btn-view">{t("ViewProfile")}</a>
-                </div>
-              </div>
-              {/* Speaker 7 */}
-              <div className="speaker-card">
-                <div className="speaker-image">
-                  <img src={nu7} alt="Christoffer Noring" />
-                </div>
-                <div className="speaker-info">
-                  <h5 className="speaker-name">Christoffer Noring</h5>
-                  <p className="speaker-title">Senior Cloud Advocate</p>
-                  <p className="speaker-title">at Microsoft</p>
-                  <a href="https://www.linkedin.com/in/christoffer-noring-3257061/?originalSubdomain=uk" className="btn-view">{t("ViewProfile")}</a>
-                </div>
-              </div>
-              {/* Speaker 8 */}
-              <div className="speaker-card">
-                <div className="speaker-image">
-                  <img src={nu8} alt="Pablo Nunes Lopes" />
-                </div>
-                <div className="speaker-info">
-                  <h5 className="speaker-name">Pablo Nunes Lopesg</h5>
-                  <p className="speaker-title">Global Cloud Advocate at Microsoft</p>
-                  <p className="speaker-title">Cloud + AI + Python/.NET </p>
-                  <a href="https://www.linkedin.com/in/pablonuneslopes/" className="btn-view">{t("ViewProfile")}</a>
-                </div>
-              </div>
-              {/* Speaker 9 */}
               <div className="speaker-card">
                 <div className="speaker-image">
                   <img src={nu9} alt="Sarah Young" />

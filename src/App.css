@@ -169,7 +169,6 @@ body {
   color: white;
   margin-bottom: 20px;
   text-align: left;
-  padding-left: 10px;
 }
 
 
@@ -184,6 +183,7 @@ body {
   border-radius: 30px;
   background-image: repeating-radial-gradient(#18E96C, #008877);
   padding: 20px;
+  margin: 20px 0;
   color: white;
 }
 
