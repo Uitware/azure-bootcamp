@@ -33,7 +33,7 @@ const resources = {
       "AzureManagement": "Azure Management",
       "AzureManagementDescription": "Focuses on Azure management areas and groups, resource hierarchy, cost management, subscription configuration, and security of resource management.",
       "AzureCloudApplicationDevelopment": "Development of AI applications",
-      "AzureCloudApplicationDevelopmentDescription": "Introduces Git, Azure Functions, Blob Storage, and Azure security solutions, focusing on practical aspects of developing cloud applications.",
+      "AzureCloudApplicationDevelopmentDescription": "The module provides practical skills in creating and deploying AI software solutions based on computer vision, language analysis, intelligent search, and generative artificial intelligence.",
       "AzureArchitectureComponentsAndServices": "Azure Architecture Components and Services",
       "AzureArchitectureComponentsAndServicesDescription": "Concentrates on the core architectural components of Azure, including computing, networking, storage services, identity, and access management.",
       "ArchitectingSolutionsOnAzure": "Architecting Solutions on Azure",
@@ -101,7 +101,9 @@ const resources = {
       "AssessmentPoliciesDetails": "The course includes both theoretical and practical sessions; the final assessment of participants is based on course completion results.",
       "EventStarted": "The Event has started",
       "StartDate": "10 March 2025",
-      "Start": "Start:"
+      "Start": "Start:",
+      "DevelopmentAzureCloudApplications": "Development of Azure cloud applications",
+      "DevelopmentAzureCloudApplicationsText": "This module introduces Git, Azure functions, Blob storage, and Azure security solutions, focusing on the practical aspects of cloud application development.",
     }
   },
   uk: {
@@ -138,7 +140,7 @@ const resources = {
       "AzureManagement": "Керування Azure",
       "AzureManagementDescription": "Фокусується на областях і групах керування Azure, ієрархії ресурсів, управлінні витратами, конфігурації підписки та безпеці керування ресурсами.",
       "AzureCloudApplicationDevelopment": "Розробка програмних рішень на основі AI",
-      "AzureCloudApplicationDevelopmentDescription": "Цей модуль знайомить із Git, функціями Azure, сховищем BLOB-об’єктів і рішеннями Azure безпеки, зосереджуючись на практичних аспектах розробки хмарних програм.",
+      "AzureCloudApplicationDevelopmentDescription": "Модуль дає практичні навички у створенні і розгортанні AI програмних рішень на основі комп'ютерного зору, мовного аналізу, інтелектуального пошуку та генеративного штучного інтелекту.",
       "AzureArchitectureComponentsAndServices": "Компоненти та служби архітектури Azure",
       "AzureArchitectureComponentsAndServicesDescription": "В модулі розглядаються основні архітектурні компоненти Azure, включаючи віртуальні машини, мережу, служби зберігання, ідентифікацію та керування доступом.",
       "ArchitectingSolutionsOnAzure": "Архітектурні рішення в Azure",
@@ -205,7 +207,9 @@ const resources = {
       "AssessmentPoliciesDetails": "курс розрахований на теоретичний та практичний формат занять; фінальне оцінювання слухачів відбувається за результатами проходження курсів.",
       "EventStarted": "Подія почалася",
       "StartDate": "10 березня 2025 року",
-      "Start": "Початок:"
+      "Start": "Початок:",
+      "DevelopmentAzureCloudApplications": "Розробка хмарних програм Azure",
+      "DevelopmentAzureCloudApplicationsText": "Цей модуль знайомить із Git, функціями Azure, сховищем Blob-об’єктів і рішеннями Azure безпеки, зосереджуючись на практичних аспектах розробки хмарних програм."
     }
   }
 };

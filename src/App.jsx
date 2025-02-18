@@ -188,7 +188,6 @@ function App() {
                 <h3 className="agenda-event-title">{t("IntroductionToAzureCloud")}</h3>
                 <div className="speaker-container">
                 <div className="black-circle"></div>
-                  <h3 className="agenda-event-title">Andriy Bilous</h3>
                 </div>
                 <p className="agenda-description">{t("IntroductionToAzureCloudDescription")}</p>
               </div>
@@ -198,12 +197,11 @@ function App() {
             <div className="agenda-item">
               <div className="agenda-date">17 - 23 {t("March")}</div>
               <div className="agenda-details">
-                <h3 className="agenda-event-title">{t("AzureCloudApplicationDevelopment")}</h3>
+                <h3 className="agenda-event-title">{t("DevelopmentAzureCloudApplications")}</h3>
                 <div className="speaker-container">
                   <div className="black-circle"></div>
-                  <h3 className="agenda-event-title">Andriy Bilous</h3>
                 </div>
-                <p className="agenda-description">{t("AzureCloudApplicationDevelopmentDescription")}</p>
+                <p className="agenda-description">{t("DevelopmentAzureCloudApplicationsText")}</p>
               </div>
             </div>
             <hr className="agenda-divider" />
@@ -215,7 +213,6 @@ function App() {
                 <div className="speaker-container">
                   {/* <img src={nu4} alt="Anton Boyko" className="speaker-photo" /> */}
                   <div className="black-circle"></div>
-                  <h3 className="agenda-event-title">Anton Boyko</h3>
                 </div>
                 <p className="agenda-description">{t("AzureArchitectureComponentsAndServicesDescription")}</p>
               </div>
@@ -241,7 +238,6 @@ function App() {
                 <h3 className="agenda-event-title">{t("AzureAutomation")}</h3>
                 <div className="speaker-container">
                   <div className="black-circle"></div>
-                  <h3 className="agenda-event-title">Orest Lavriv</h3>
                 </div>
                 <p className="agenda-description">{t("AzureAutomationDescription")}</p>
               </div>
@@ -254,7 +250,6 @@ function App() {
                 <h3 className="agenda-event-title">{t("AzureDevOpsServices")}</h3>
                 <div className="speaker-container">
                   <img src={nu1} alt="Andriy Bilous" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Andriy Bilous</h3>
                 </div>
                 <p className="agenda-description">{t("AzureDevOpsServicesDescription")}</p>
               </div>
@@ -280,7 +275,6 @@ function App() {
                 <h3 className="agenda-event-title">{t("AzureDataServices")}</h3>
                 <div className="speaker-container">
                   <div className="black-circle"></div>
-                  <h3 className="agenda-event-title">Sarah Young</h3>
                 </div>
                 <p className="agenda-description">{t("AzureDataServicesDescription")}</p>
               </div>
@@ -307,7 +301,6 @@ function App() {
                 <div className="speaker-container">
                   {/* <img src={nu5} alt="Taras Kloba" className="speaker-photo" /> */}
                   <div className="black-circle"></div>
-                  <h3 className="agenda-event-title">Taras Kloba</h3>
                 </div>
                 <p className="agenda-description">{t("AzureCloudApplicationDevelopmentDescription")}</p>
               </div>
