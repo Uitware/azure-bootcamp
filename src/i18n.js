@@ -99,7 +99,9 @@ const resources = {
       "ClassFormat1": "Online.",
       "AssessmentPolicies": "Assessment policies (based on course results, tests, project defense, etc.):",
       "AssessmentPoliciesDetails": "The course includes both theoretical and practical sessions; the final assessment of participants is based on course completion results.",
-      "EventStarted": "The Event has started"
+      "EventStarted": "The Event has started",
+      "StartDate": "10 March 2025",
+      "Start": "Start:"
     }
   },
   uk: {
@@ -201,7 +203,9 @@ const resources = {
       "ClassFormat1": "онлайн.",
       "AssessmentPolicies": "Політики оцінювання (за результатами курсу, згідно тестувань, захист проєкту, інше):",
       "AssessmentPoliciesDetails": "курс розрахований на теоретичний та практичний формат занять; фінальне оцінювання слухачів відбувається за результатами проходження курсів.",
-      "EventStarted": "Подія почалася"
+      "EventStarted": "Подія почалася",
+      "StartDate": "10 березня 2025 року",
+      "Start": "Початок:"
     }
   }
 };

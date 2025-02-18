@@ -109,11 +109,26 @@ body {
   border: 2px solid #ccc;
   object-fit: cover;
 }
+
+.black-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+  display: inline-block;
+  vertical-align: middle; 
+}
+
 .speaker-container {
   display: flex;
   align-items: center; 
   gap: 5px; 
 }
+
+.startDate {
+  font-size: 24px;
+}
+
 @media (max-width: 1000px) {
   .image-content img {
       display: none;

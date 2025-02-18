@@ -166,6 +166,7 @@ function App() {
 
         <div className="event-info">
           <div className="countdown">
+          <p className="startDate"><strong>{t("Start")}</strong> {t("StartDate")}</p>
             <p className="countdown-label">{t("TimeLeftLabel")}</p>
             <div className="countdown-timer">
               <CountdownTimer targetDate={targetDate} />
@@ -174,7 +175,6 @@ function App() {
         </div>
         <div className="agenda-container">
           <div className="discriptionProgram">
-            <h2 className="agenda-title">{t("AgendaTitle")}</h2>
             <p className="mainText"><b>{t("NameProgram")}</b> {t("AzureBootcamp")}</p>
             <p className="mainText"><b>{t("GoalsProgramTitle")}</b> {t("GoalsProgram")}</p>
             <p className="mainText"><b>{t('DetailsProgram')}</b></p>
@@ -219,7 +219,8 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureArchitectureComponentsAndServices")}</h3>
                 <div className="speaker-container">
-                  <img src={nu4} alt="Anton Boyko" className="speaker-photo" />
+                  {/* <img src={nu4} alt="Anton Boyko" className="speaker-photo" /> */}
+                  <div className="black-circle"></div>
                   <h3 className="agenda-event-title">Anton Boyko</h3>
                 </div>
                 <p className="agenda-description">{t("AzureArchitectureComponentsAndServicesDescription")}</p>
@@ -232,8 +233,8 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("ArchitectingSolutionsOnAzure")}</h3>
                 <div className="speaker-container">
-                  <img src={nu3} alt="Andriy Bilous" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Stanislav Lebedenko</h3>
+                <img src={nu2} alt="Orest Lavriv" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Orest Lavriv</h3>
                 </div>
                 <p className="agenda-description">{t("ArchitectingSolutionsOnAzureDescription")}</p>
               </div>
@@ -271,8 +272,8 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureSecurityAndPrivacy")}</h3>
                 <div className="speaker-container">
-                  <img src={nu1} alt="Andriy Bilous" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Andriy Bilous</h3>
+                  <img src={nu9} alt="Sarah Young" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Sarah Young</h3>
                 </div>
                 <p className="agenda-description">{t("AzureSecurityAndPrivacyDescription")}</p>
               </div>
@@ -308,48 +309,16 @@ function App() {
             <div className="agenda-item">
               <div className="agenda-date">12 - 18 {t("May")}</div>
               <div className="agenda-details">
-                <h3 className="agenda-event-title">{t("DevelopmentOfSoftwareSolutions")}</h3>
+                <h3 className="agenda-event-title">{t("AzureCloudApplicationDevelopment")}</h3>
                 <div className="speaker-container">
-                  <img src={nu5} alt="Taras Kloba" className="speaker-photo" />
+                  {/* <img src={nu5} alt="Taras Kloba" className="speaker-photo" /> */}
+                  <div className="black-circle"></div>
                   <h3 className="agenda-event-title">Taras Kloba</h3>
                 </div>
-                <p className="agenda-description">{t("DevelopmentOfSoftwareSolutionsDescription")}</p>
+                <p className="agenda-description">{t("AzureCloudApplicationDevelopmentDescription")}</p>
               </div>
             </div>
           </div>
-
-            <p className="mainText"><b>{t('NumberOfAcademicHours')}</b> {t('NumberOfAcademicHoursTotal')}</p>
-            <p className="mainText"><b>{t('CertificateProgramObjectives')}</b> {t('CertificateProgramObjectivesDescription')}</p>
-            <p className="mainText"><b>{t('SkillsCompetenciesAcquired')}</b> </p>
-          <ul>
-            <li>{t('SkillsCompetenciesAcquired1')}</li>
-            <li>{t('SkillsCompetenciesAcquired2')}</li>
-            <li>{t('SkillsCompetenciesAcquired3')}</li>
-            <li>{t('SkillsCompetenciesAcquired4')}</li>
-            <li>{t('SkillsCompetenciesAcquired5')}</li>
-            <li>{t('SkillsCompetenciesAcquired6')}</li>
-            <li>{t('SkillsCompetenciesAcquired7')}</li>
-            <li>{t('SkillsCompetenciesAcquired8')}</li>
-          </ul>
-          <p className="mainText"><b>{t("ProgramDuration")}</b> {t("ProgramDuration1")}</p>
-          <p className="mainText"><b>{t("OrganizingDepartment")}</b> {t("OrganizingDepartment1")}</p>
-          <p className="mainText"><b>{t("InformationAboutOrganizers")}</b> {t("InformationAboutOrganizersDetails")}</p>
-          <p className="mainText"><b>{t("InformationAboutEducationalProgram")}</b></p>
-          <ul>
-            <li>{t('InformationAboutEducationalProgram1')}</li>
-            <li>{t('InformationAboutEducationalProgram2')}</li>
-            <li>{t('InformationAboutEducationalProgram3')}</li>
-          </ul>
-          <p className="mainText"><b>{t("LanguageInstruction")}</b> {t("LanguageInstructionChange")}</p>
-          <p className="mainText"><b>{t("ClassFormat")}</b> {t("ClassFormat1")}</p>
-          <p className="mainText"><b>{t("AssessmentPolicies")}</b> {t("AssessmentPoliciesDetails")}</p>
-
-
-          
-
-          
-
-
 
           </div>
         </div>
@@ -383,43 +352,7 @@ function App() {
                   <a href="https://www.linkedin.com/in/orest-l-74925992/" className="btn-view">{t("ViewProfile")}</a>
                 </div>
               </div>
-              {/* Speaker 3 */}
-              <div className="speaker-card">
-                <div className="speaker-image">
-                  <img src={nu3} alt="Stanislav Lebedenko" />
-                </div>
-                <div className="speaker-info">
-                  <h5 className="speaker-name">{t("Speaker3Name")}</h5>
-                  <p className="speaker-title">{t("Speaker3Title")}</p>
-                  <p className="speaker-title">{t("Speaker3Title1")}</p>
-                  <a href="https://www.linkedin.com/in/lebedenkostanislav/" className="btn-view">{t("ViewProfile")}</a>
-                </div>
-              </div>
-              {/* Speaker 4 */}
-              <div className="speaker-card">
-                <div className="speaker-image">
-                  <img src={nu4} alt="Anton Boyko" />
-                </div>
-                <div className="speaker-info">
-                  <h5 className="speaker-name">Anton Boyko</h5>
-                  <p className="speaker-title">CIO, Principal Architect</p>
-                  <p className="speaker-title">Microsoft MVP, RD, Academic Director</p>
-                  <a href="https://www.linkedin.com/in/boykoant/" className="btn-view">{t("ViewProfile")}</a>
-                </div>
-              </div>
-              {/* Speaker 5 */}
-              <div className="speaker-card">
-                <div className="speaker-image">
-                  <img src={nu5} alt="Taras Kloba" />
-                </div>
-                <div className="speaker-info">
-                  <h5 className="speaker-name">Taras Kloba</h5>
-                  <p className="speaker-title">Associate Director, PhD, MVP</p>
-                  <p className="speaker-title">Data & Analytics at SoftServe</p>
-                  <a href="https://www.linkedin.com/in/kloba/" className="btn-view">{t("ViewProfile")}</a>
-                </div>
-              </div>
-              {/* Speaker 6 */}
+             {/* Speaker 3 */}
               <div className="speaker-card">
                 <div className="speaker-image">
                   <img src={nu9} alt="Sarah Young" />
