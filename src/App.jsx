@@ -249,7 +249,7 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureDevOpsServices")}</h3>
                 <div className="speaker-container">
-                  <img src={nu1} alt="Andriy Bilous" className="speaker-photo" />
+                <div className="black-circle"></div>
                 </div>
                 <p className="agenda-description">{t("AzureDevOpsServicesDescription")}</p>
               </div>
