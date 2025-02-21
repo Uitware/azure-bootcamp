@@ -327,7 +327,7 @@ function App() {
                   <h5 className="speaker-name">{t("Speaker1Name")}</h5>
                   <p className="speaker-title">{t("Speaker1Title")}</p>
                   <p className="speaker-title">{t("Speaker1Title1")}</p>
-                  <a href="https://www.linkedin.com/in/andriy-bilous-32718aa7/" className="btn-view">{t("ViewProfile")}</a>
+                  <a href="https://www.linkedin.com/in/lebedenkostanislav/" className="btn-view">{t("ViewProfile")}</a>
                 </div>
               </div>
               {/* Speaker 2 */}
@@ -352,6 +352,41 @@ function App() {
                   <p className="speaker-title">Senior Cloud Security Advocate</p>
                   <p className="speaker-title">at Microsoft</p>
                   <a href="https://www.linkedin.com/in/sarahyo16/" className="btn-view">{t("ViewProfile")}</a>
+                </div>
+              </div>
+            {/* Speaker 4 */}
+              <div className="speaker-card">
+                <div className="speaker-image">
+                  <img src={nu5} alt="Taras Kloba" />
+                </div>
+                <div className="speaker-info">
+                  <h5 className="speaker-name">Taras Kloba</h5>
+                  <p className="speaker-title">Associate Director, PhD, MVP, Data & Analytics</p>
+                  <p className="speaker-title"> at SoftServe</p>
+                  <a href="https://www.linkedin.com/in/kloba/?originalSubdomain=ua" className="btn-view">{t("ViewProfile")}</a>
+                </div>
+              </div>
+
+              {/* Speaker 5 */}
+              <div className="speaker-card">
+                <div className="speaker-image">
+                  <img src={nu10} alt="Oleksandr Krakovetskyi" />
+                </div>
+                <div className="speaker-info">
+                  <h5 className="speaker-name">Oleksandr Krakovetskyi</h5>
+                  <p className="speaker-title">AI Expert, Microsoft AI MVP</p>
+                  <a href="https://www.linkedin.com/in/sashaeve/?originalSubdomain=ua" className="btn-view">{t("ViewProfile")}</a>
+                </div>
+              </div>
+              {/* Speaker 6 */}
+              <div className="speaker-card">
+                <div className="speaker-image">
+                  <img src={nu3} alt="Stas Lebedenko" />
+                </div>
+                <div className="speaker-info">
+                  <h5 className="speaker-name">Stas Lebedenko</h5>
+                  <p className="speaker-title">Cloud Architect at Solidify, Microsoft MVP</p>
+                  <a href="https://www.linkedin.com/in/lebedenkostanislav/" className="btn-view">{t("ViewProfile")}</a>
                 </div>
               </div>
             </div>
