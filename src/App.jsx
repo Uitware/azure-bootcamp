@@ -188,7 +188,8 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("IntroductionToAzureCloud")}</h3>
                 <div className="speaker-container">
-                <div className="black-circle"></div>
+                  <img src={nu3} alt="Stas Lebedenko" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Stas Lebedenko</h3>
                 </div>
                 <p className="agenda-description">{t("IntroductionToAzureCloudDescription")}</p>
               </div>
@@ -212,8 +213,7 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureArchitectureComponentsAndServices")}</h3>
                 <div className="speaker-container">
-                  <img src={nu3} alt="Stas Lebedenko" className="speaker-photo" />
-                  <h3 className="agenda-event-title">Stas Lebedenko</h3>
+                  <div className="black-circle"></div>
                 </div>
                 <p className="agenda-description">{t("AzureArchitectureComponentsAndServicesDescription")}</p>
               </div>
