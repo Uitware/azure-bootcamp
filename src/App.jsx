@@ -93,6 +93,16 @@ function App() {
       setImageUrl("https://upload.wikimedia.org/wikipedia/commons/f/ff/Nulp_logo_ukr.svg");
       setImClassName("img-i2");
     }
+    else if (hostname === "kpi.azurebootcamp.uitware.com") {
+      link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
+      setImageUrl("https://commons.wikimedia.org/wiki/File:NTUU_KPI_logo.png");
+      setImClassName("img-i5");
+    }
+    else if (hostname === "op.azurebootcamp.uitware.com") {
+      link = "https://edu.op.edu.ua/course/view.php?id=1423";
+      setImageUrl("");
+      setImClassName("img-i6");
+    }
     else if (hostname === "itstep.azurebootcamp.uitware.com") {
       link = "https://forms.gle/KTcz68SwQotuTLxHA";
       setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2022/12/it_step.png");
