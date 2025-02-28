@@ -98,6 +98,11 @@ function App() {
       setImageUrl("https://commons.wikimedia.org/wiki/File:NTUU_KPI_logo.png");
       setImClassName("img-i5");
     }
+    else if (hostname === "nure.azurebootcamp.uitware.com") {
+      link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
+      setImageUrl("https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_NURE_3_Uk_27mm.jpg");
+      setImClassName("img-i7");
+    }
     else if (hostname === "op.azurebootcamp.uitware.com") {
       link = "https://edu.op.edu.ua/course/view.php?id=1423";
       setImageUrl("");
