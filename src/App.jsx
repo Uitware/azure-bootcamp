@@ -81,7 +81,7 @@ function App() {
     let link;
 
     if (hostname === "lnu.azurebootcamp.uitware.com") {
-      link = "https://forms.gle/m4TRfL35YgvrEkKd8";
+      link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
       setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2023/03/lnu.svg");
       setImClassName("img-i4");
     } else if (hostname === "ucu.azurebootcamp.uitware.com") {
@@ -89,7 +89,7 @@ function App() {
       setImageUrl("https://upload.wikimedia.org/wikipedia/commons/2/2c/UkrainianCatholicUniversitylogo.png");
       setImClassName("img-i1");
     } else if (hostname === "lp.azurebootcamp.uitware.com") {
-      link = "https://forms.gle/4a1pAL8zbPKSVL4y7";
+      link = "https://forms.gle/SVnL3bqunxs6Nd5u7";
       setImageUrl("https://upload.wikimedia.org/wikipedia/commons/f/ff/Nulp_logo_ukr.svg");
       setImClassName("img-i2");
     }
