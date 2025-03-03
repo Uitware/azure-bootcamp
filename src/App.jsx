@@ -98,16 +98,16 @@ function App() {
       setImClassName("img-i4");
     } else if (hostname === "kpi.azurebootcamp.uitware.com") {
       link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
-      setImageUrl("https://commons.wikimedia.org/wiki/File:NTUU_KPI_logo.png");
+      setImageUrl("https://kpi.ua/files/logo.png");
       setImClassName("img-i5");
     } else if (hostname === "nure.azurebootcamp.uitware.com") {
       link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
-      setImageUrl("https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_NURE_3_Uk_27mm.jpg");
-      setImClassName("img-i7");
-    } else if (hostname === "op.azurebootcamp.uitware.com") {
-      link = "https://edu.op.edu.ua/enrol/editinstance.php?courseid=1423&id=4945&type=self";
-      setImageUrl("");
+      setImageUrl("https://karazin.ua/inc/assets/images/logo-white.svg");
       setImClassName("img-i6");
+    } else if (hostname === "op.azurebootcamp.uitware.com") {
+      link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
+      setImageUrl("https://op.edu.ua/sites/default/files/logo_2_0.png");
+      setImClassName("img-i7");
     } else {
       link = "default_link";
     }
