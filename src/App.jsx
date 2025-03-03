@@ -92,26 +92,22 @@ function App() {
       link = "https://forms.gle/SVnL3bqunxs6Nd5u7";
       setImageUrl("https://upload.wikimedia.org/wikipedia/commons/f/ff/Nulp_logo_ukr.svg");
       setImClassName("img-i2");
-    }
-    else if (hostname === "kpi.azurebootcamp.uitware.com") {
+    } else if (hostname === "itstep.azurebootcamp.uitware.com") {
+      link = "https://forms.gle/KTcz68SwQotuTLxHA";
+      setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2022/12/it_step.png");
+      setImClassName("img-i4");
+    } else if (hostname === "kpi.azurebootcamp.uitware.com") {
       link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
       setImageUrl("https://commons.wikimedia.org/wiki/File:NTUU_KPI_logo.png");
       setImClassName("img-i5");
-    }
-    else if (hostname === "nure.azurebootcamp.uitware.com") {
+    } else if (hostname === "nure.azurebootcamp.uitware.com") {
       link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
       setImageUrl("https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_NURE_3_Uk_27mm.jpg");
       setImClassName("img-i7");
-    }
-    else if (hostname === "op.azurebootcamp.uitware.com") {
+    } else if (hostname === "op.azurebootcamp.uitware.com") {
       link = "https://edu.op.edu.ua/enrol/editinstance.php?courseid=1423&id=4945&type=self";
       setImageUrl("");
       setImClassName("img-i6");
-    }
-    else if (hostname === "itstep.azurebootcamp.uitware.com") {
-      link = "https://vns.itstep.edu.ua/course/view.php?id=152";
-      setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2022/12/it_step.png");
-      setImClassName("img-i4");
     } else {
       link = "default_link";
     }
@@ -411,6 +407,7 @@ function App() {
         <div className="logos">
           <img className={imClassName} src={imageUrl} alt="Logo" />
           <img className="img-i3" src="https://media.licdn.com/dms/image/D4D0BAQH3q-WlTfehSw/company-logo_200_200/0/1667339151545/uitware_logo?e=1714003200&v=beta&t=vxCsa60KT9h1aUPJqFzLxsy5evIMR3xj0X8V-b1M70k" alt="Logo 3" />
+         
         </div>
       </div>
     </div>
