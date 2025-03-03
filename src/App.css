@@ -454,9 +454,6 @@ body {
   margin: 0 10px;
 }
 
-.img-i6 {
-  max-height: 150px;
-}
 @media (max-width: 750px) {
 
   .language-selector {
