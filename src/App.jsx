@@ -104,12 +104,12 @@ function App() {
       setImClassName("img-i7");
     }
     else if (hostname === "op.azurebootcamp.uitware.com") {
-      link = "https://edu.op.edu.ua/course/view.php?id=1423";
+      link = "https://edu.op.edu.ua/enrol/editinstance.php?courseid=1423&id=4945&type=self";
       setImageUrl("");
       setImClassName("img-i6");
     }
     else if (hostname === "itstep.azurebootcamp.uitware.com") {
-      link = "https://forms.gle/KTcz68SwQotuTLxHA";
+      link = "vhttps://vns.itstep.edu.ua/course/view.php?id=152";
       setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2022/12/it_step.png");
       setImClassName("img-i4");
     } else {
