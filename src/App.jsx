@@ -4,7 +4,7 @@ import './App.css';
 import nu1 from './assets/nu1.png';
 import nu2 from './assets/nu2.jpg';
 import nu3 from './assets/nu3.jpg';
-// import nu4 from './assets/nu4.jpg';
+import nu4 from './assets/nu4.jpg';
 import nu5 from './assets/nu5.jpeg';
 import nu9 from './assets/nu9.jpg';
 import nu10 from './assets/nu10.jpg';
@@ -216,7 +216,8 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("DevelopmentAzureCloudApplications")}</h3>
                 <div className="speaker-container">
-                  <div className="black-circle"></div>
+                  <img src={nu4} alt="Anton Boyko" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Anton Boyko</h3>
                 </div>
                 <p className="agenda-description">{t("DevelopmentAzureCloudApplicationsText")}</p>
               </div>
