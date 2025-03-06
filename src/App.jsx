@@ -81,7 +81,7 @@ function App() {
     let link;
 
     if (hostname === "lnu.azurebootcamp.uitware.com") {
-      link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
+      link = "https://forms.gle/hV6tqcWMDXoZdy6V8";
       setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2023/03/lnu.svg");
       setImClassName("img-i4");
     } else if (hostname === "ucu.azurebootcamp.uitware.com") {
