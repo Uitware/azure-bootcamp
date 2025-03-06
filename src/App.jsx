@@ -108,6 +108,11 @@ function App() {
       setImageUrl("");
       setImClassName("img-i6");
     }
+    else if (hostname === "kneu.azurebootcamp.uitware.com") {
+      link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
+      setImageUrl("https://en.wikipedia.org/wiki/Kyiv_National_Economic_University#/media/File:Kyiv_National_Economic_University.png");
+      setImClassName("img-i8");
+    }
     else if (hostname === "itstep.azurebootcamp.uitware.com") {
       link = "https://vns.itstep.edu.ua/course/view.php?id=152";
       setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2022/12/it_step.png");
