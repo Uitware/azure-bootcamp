@@ -114,7 +114,7 @@ function App() {
       setImClassName("img-i8");
     }
     else if (hostname === "itstep.azurebootcamp.uitware.com") {
-      link = "https://vns.itstep.edu.ua/course/view.php?id=152";
+      link = "https://forms.gle/uZWwkYENmhkP56DM7";
       setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2022/12/it_step.png");
       setImClassName("img-i4");
     } else {
