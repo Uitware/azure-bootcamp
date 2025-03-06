@@ -108,9 +108,9 @@ function App() {
       setImageUrl("");
       setImClassName("img-i6");
     }
-    else if (hostname === "kneu.azurebootcamp.uitware.com") {
+    else if (hostname === "knteu.azurebootcamp.uitware.com") {
       link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
-      setImageUrl("https://en.wikipedia.org/wiki/Kyiv_National_Economic_University#/media/File:Kyiv_National_Economic_University.png");
+      setImageUrl("https://en.wikipedia.org/wiki/Kyiv_National_University_of_Trade_and_Economics#/media/File:COA_Kyiv_National_University_of_Trade_and_Economics.svg");
       setImClassName("img-i8");
     }
     else if (hostname === "itstep.azurebootcamp.uitware.com") {
