@@ -6,8 +6,13 @@ import nu2 from './assets/nu2.jpg';
 import nu3 from './assets/nu3.jpg';
 import nu4 from './assets/nu4.jpg';
 import nu5 from './assets/nu5.jpeg';
+import nu6 from './assets/nu6.png';
+import nu7 from './assets/nu7.png';
+import nu8 from './assets/nu8.jpg';
 import nu9 from './assets/nu9.jpg';
 import nu10 from './assets/nu10.jpg';
+import nu11 from './assets/nu11.jpg';
+
 import brand from './assets/brand.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useTranslation } from 'react-i18next';
@@ -73,8 +78,8 @@ function App() {
   const [registerLink, setRegisterLink] = useState('');
   const [imageUrl, setImageUrl] = useState('https://itcluster.lviv.ua/wp-content/uploads/2023/03/lnu.svg');
   const [imClassName, setImClassName] = useState('img-i4');
-  const targetDate = new Date("2025-03-10T00:00:00");
-
+  const targetDate = new Date("2025-03-10T00:00:00Z");
+  
   useEffect(() => {
     const hostname = window.location.hostname;
 
@@ -234,7 +239,8 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureArchitectureComponentsAndServices")}</h3>
                 <div className="speaker-container">
-                  <div className="black-circle"></div>
+                  <img src={nu7} alt="Christoffer Noring" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Christoffer Noring</h3>
                 </div>
                 <p className="agenda-description">{t("AzureArchitectureComponentsAndServicesDescription")}</p>
               </div>
@@ -246,7 +252,8 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("ArchitectingSolutionsOnAzure")}</h3>
                 <div className="speaker-container">
-                <div className="black-circle"></div>
+                  <img src={nu11} alt="Ihor Leontiev" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Ihor Leontiev</h3>
                 </div>
                 <p className="agenda-description">{t("ArchitectingSolutionsOnAzureDescription")}</p>
               </div>
@@ -258,7 +265,8 @@ function App() {
               <div className="agenda-details">
                 <h3 className="agenda-event-title">{t("AzureAutomation")}</h3>
                 <div className="speaker-container">
-                  <div className="black-circle"></div>
+                  <img src={nu6} alt="Leonid Chetverikov" className="speaker-photo" />
+                  <h3 className="agenda-event-title">Leonid Chetverikov</h3>
                 </div>
                 <p className="agenda-description">{t("AzureAutomationDescription")}</p>
               </div>
@@ -399,6 +407,7 @@ function App() {
                   <a href="https://www.linkedin.com/in/sashaeve/?originalSubdomain=ua" className="btn-view">{t("ViewProfile")}</a>
                 </div>
               </div>
+
               {/* Speaker 6 */}
               <div className="speaker-card">
                 <div className="speaker-image">
