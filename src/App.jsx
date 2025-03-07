@@ -12,8 +12,6 @@ import nu8 from './assets/nu8.jpg';
 import nu9 from './assets/nu9.jpg';
 import nu10 from './assets/nu10.jpg';
 import nu11 from './assets/nu11.jpg';
-import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import brand from './assets/brand.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
