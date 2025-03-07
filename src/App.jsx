@@ -48,7 +48,7 @@ const CountdownTimer = ({ targetDate }) => {
 
   return (
     <>
-      {days > 2 ? (
+      {days >= 2 ? ( //changed from > to >=
         <>
           <span>{t("time.days", { count: days })}</span>{" "}
           <span>{t("time.hours", { count: hours })}</span>
