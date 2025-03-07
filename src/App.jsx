@@ -12,6 +12,8 @@ import nu8 from './assets/nu8.jpg';
 import nu9 from './assets/nu9.jpg';
 import nu10 from './assets/nu10.jpg';
 import nu11 from './assets/nu11.jpg';
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import brand from './assets/brand.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -48,7 +50,7 @@ const CountdownTimer = ({ targetDate }) => {
 
   return (
     <>
-      {days >= 2 ? ( //changed from > to >=
+      {days >= 1 ? ( //changed from > to >=
         <>
           <span>{t("time.days", { count: days })}</span>{" "}
           <span>{t("time.hours", { count: hours })}</span>
@@ -97,28 +99,23 @@ function App() {
       link = "https://forms.gle/SVnL3bqunxs6Nd5u7";
       setImageUrl("https://upload.wikimedia.org/wikipedia/commons/f/ff/Nulp_logo_ukr.svg");
       setImClassName("img-i2");
-    }
-    else if (hostname === "kpi.azurebootcamp.uitware.com") {
+    } else if (hostname === "kpi.azurebootcamp.uitware.com") {
       link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
       setImageUrl("https://commons.wikimedia.org/wiki/File:NTUU_KPI_logo.png");
       setImClassName("img-i5");
-    }
-    else if (hostname === "nure.azurebootcamp.uitware.com") {
+    } else if (hostname === "nure.azurebootcamp.uitware.com") {
       link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
       setImageUrl("https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_NURE_3_Uk_27mm.jpg");
       setImClassName("img-i7");
-    }
-    else if (hostname === "op.azurebootcamp.uitware.com") {
+    } else if (hostname === "op.azurebootcamp.uitware.com") {
       link = "https://edu.op.edu.ua/enrol/editinstance.php?courseid=1423&id=4945&type=self";
       setImageUrl("");
       setImClassName("img-i6");
-    }
-    else if (hostname === "knteu.azurebootcamp.uitware.com") {
+    } else if (hostname === "knteu.azurebootcamp.uitware.com") {
       link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
       setImageUrl("https://en.wikipedia.org/wiki/Kyiv_National_University_of_Trade_and_Economics#/media/File:COA_Kyiv_National_University_of_Trade_and_Economics.svg");
       setImClassName("img-i8");
-    }
-    else if (hostname === "itstep.azurebootcamp.uitware.com") {
+    } else if (hostname === "itstep.azurebootcamp.uitware.com") {
       link = "https://forms.gle/uZWwkYENmhkP56DM7";
       setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2022/12/it_step.png");
       setImClassName("img-i4");
@@ -346,7 +343,8 @@ function App() {
           <h2 className="speakers-title">{t("FeaturedSpeakers")}</h2>
           <div className="speakers-wrapper">
 
-            <div className="speakers-container">
+             <div className="speakers-container">
+
               {/* Speaker 1 */}
               <div className="speaker-card">
                 <div className="speaker-image">
@@ -359,6 +357,7 @@ function App() {
                   <a href="https://www.linkedin.com/in/lebedenkostanislav/" className="btn-view">{t("ViewProfile")}</a>
                 </div>
               </div>
+
               {/* Speaker 2 */}
               <div className="speaker-card">
                 <div className="speaker-image">
@@ -371,6 +370,7 @@ function App() {
                   <a href="https://www.linkedin.com/in/orest-l-74925992/" className="btn-view">{t("ViewProfile")}</a>
                 </div>
               </div>
+
              {/* Speaker 3 */}
               <div className="speaker-card">
                 <div className="speaker-image">
@@ -383,6 +383,7 @@ function App() {
                   <a href="https://www.linkedin.com/in/sarahyo16/" className="btn-view">{t("ViewProfile")}</a>
                 </div>
               </div>
+
             {/* Speaker 4 */}
               <div className="speaker-card">
                 <div className="speaker-image">
@@ -419,16 +420,64 @@ function App() {
                   <a href="https://www.linkedin.com/in/lebedenkostanislav/" className="btn-view">{t("ViewProfile")}</a>
                 </div>
               </div>
+
+              {/* Speaker 7 */}
+              <div className="speaker-card">
+                <div className="speaker-image">
+                  <img src={nu4} alt="Anton Boyko" />
+                </div>
+                <div className="speaker-info">
+                  <h5 className="speaker-name">Anton Boyko</h5>
+                  <p className="speaker-title">-</p>
+                  <a href="https://www.linkedin.com/in/boykoant/" className="btn-view">{t("ViewProfile")}</a>
+                </div>
+            </div>
+
+            {/* Speaker 7 */}
+            <div className="speaker-card">
+              <div className="speaker-image">
+                <img src={nu7} alt="Christoffer Noring" />
+              </div>
+              <div className="speaker-info">
+                <h5 className="speaker-name">Christoffer Noring</h5>
+                <p className="speaker-title">-</p>
+                <a href="https://www.linkedin.com/in/christoffer-noring-3257061/" className="btn-view">{t("ViewProfile")}</a>
+              </div>
+            </div>
+
+            {/* Speaker 8 */}
+            <div className="speaker-card">
+              <div className="speaker-image">
+                <img src={nu11} alt="Ihor Leontiev" />
+              </div>
+              <div className="speaker-info">
+                <h5 className="speaker-name">Ihor Leontiev</h5>
+                <p className="speaker-title">-</p>
+                <a href="https://www.linkedin.com/in/leontievihor/" className="btn-view">{t("ViewProfile")}</a>
+              </div>
+            </div>
+
+            {/* Speaker 9 */}
+            <div className="speaker-card">
+              <div className="speaker-image">
+                <img src={nu6} alt="Leonid Chetverikov" />
+              </div>
+              <div className="speaker-info">
+                <h5 className="speaker-name">Leonid Chetverikov</h5>
+                <p className="speaker-title">-</p>
+                <a href="https://www.linkedin.com/in/leonid-chetverikov-82b91a21/" className="btn-view">{t("ViewProfile")}</a>
+              </div>
             </div>
           </div>
         </div>
-
+ 
         <div className="logos">
           <img className={imClassName} src={imageUrl} alt="Logo" />
           <img className="img-i3" src="https://media.licdn.com/dms/image/D4D0BAQH3q-WlTfehSw/company-logo_200_200/0/1667339151545/uitware_logo?e=1714003200&v=beta&t=vxCsa60KT9h1aUPJqFzLxsy5evIMR3xj0X8V-b1M70k" alt="Logo 3" />
          
         </div>
       </div>
+    </div>
     </div>
   );
 }
