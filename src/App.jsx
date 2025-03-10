@@ -352,7 +352,7 @@ function App() {
                   <h5 className="speaker-name">{t("Speaker1Name")}</h5>
                   <p className="speaker-title">{t("Speaker1Title")}</p>
                   <p className="speaker-title">{t("Speaker1Title1")}</p>
-                  <a href="https://www.linkedin.com/in/lebedenkostanislav/" className="btn-view">{t("ViewProfile")}</a>
+                  <a href="https://www.linkedin.com/in/andriy-bilous-32718aa7/" className="btn-view">{t("ViewProfile")}</a>
                 </div>
               </div>
 
