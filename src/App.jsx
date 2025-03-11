@@ -113,6 +113,10 @@ function App() {
       link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
       setImageUrl("https://en.wikipedia.org/wiki/Kyiv_National_University_of_Trade_and_Economics#/media/File:COA_Kyiv_National_University_of_Trade_and_Economics.svg");
       setImClassName("img-i8");
+    } else if (hostname === "uzhnu.azurebootcamp.uitware.com") {
+      link = "http://study.ucu.org.ua/course/azure-bootcamp/start";
+      setImageUrl("https://upload.wikimedia.org/wikipedia/commons/a/a2/Transcarpathian_State_University.png");
+      setImClassName("img-i9");
     } else if (hostname === "itstep.azurebootcamp.uitware.com") {
       link = "https://forms.gle/uZWwkYENmhkP56DM7";
       setImageUrl("https://itcluster.lviv.ua/wp-content/uploads/2022/12/it_step.png");
